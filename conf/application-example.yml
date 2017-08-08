@@ -1,0 +1,8 @@
+mail:
+  domains:
+    - domain: example.com
+      mappings:
+        - username: admin
+          recipients:
+            - admin1@example.com
+            - admin2@example.com

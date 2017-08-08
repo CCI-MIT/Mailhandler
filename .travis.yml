@@ -4,13 +4,11 @@ sudo: false
 
 cache:
   directories:
-  - $HOME/.m2
+  - "$HOME/.m2"
 
 before_install:
 - gem install dpl --source http://rubygems.org
-# TODO: set up deploy key
-# - openssl aes-256-cbc -K $encrypted_3721589d2908_key -iv $encrypted_3721589d2908_iv -in travis/deploy_rsa.enc -out deploy_rsa -d
-# - chmod 600 deploy_rsa
+- openssl aes-256-cbc -K $encrypted_2a4430333cb6_key -iv $encrypted_2a4430333cb6_iv -in travis/deploy_rsa.enc -out /tmp/deploy_rsa -d
 
 addons:
   ssh_known_hosts:
@@ -22,13 +20,12 @@ install: true
 script:
 - mvn package
 
-#TODO: set up deploy keys
-#deploy:
-#- provider: script
-#  skip_cleanup: true
-#  script: travis/deploy.sh
-#  on:
-#    all_branches: true
+deploy:
+- provider: script
+  skip_cleanup: true
+  script: travis/deploy.sh
+  on:
+    all_branches: true
 
 notifications:
   slack:

@@ -1,7 +1,8 @@
 #!/bin/bash
 
 eval "$(ssh-agent -s)"
-ssh-add deploy_rsa
+chmod 600 /tmp/deploy_rsa
+ssh-add /tmp/deploy_rsa
 
 DEPLOY_SERVER=travis@cognosis.mit.edu
 echo "Copying binaries to ${DEPLOY_SERVER}:mailhandler ..."

@@ -1,5 +1,7 @@
 # Mailhandler
 
+[![Build Status](https://travis-ci.org/CCI-MIT/Mailhandler.svg?branch=master)](https://travis-ci.org/CCI-MIT/Mailhandler)
+
 This script allows you to set up a simple email forwarding server using [SendGrid's Inbound Parse](https://sendgrid.com/docs/User_Guide/Settings/parse.html). You can configure several domains and user names, each forwarding to several emails addresses.
 
 ## Usage

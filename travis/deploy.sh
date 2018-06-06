@@ -4,7 +4,7 @@ eval "$(ssh-agent -s)"
 chmod 600 /tmp/deploy_rsa
 ssh-add /tmp/deploy_rsa
 
-DEPLOY_SERVER=travis@cognosis.mit.edu
+DEPLOY_SERVER=binaries@cognosis2.mit.edu
 echo "Copying binaries to ${DEPLOY_SERVER}:mailhandler ..."
 scp target/mailhandler-*.jar ${DEPLOY_SERVER}:mailhandler/
 

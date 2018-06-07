@@ -53,6 +53,8 @@ class EmailService
             }
 
         }
+        log.debug("Sending email {} from {} to {}", parsedEmail.subject, parsedEmail.from.address,
+                mappedRecipients)
         sendEmail(emailBuilder.build())
     }
 
